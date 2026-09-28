@@ -43,16 +43,19 @@ Tilt angle logged over the serial port on two surfaces: desk mat (std. dev. 0.58
   <img src="images/perfboard-wiring.jpg" width="200" alt="Perfboard wiring">
 </p>
 
+<p align="center"><img src="images/power-supply.png" width="520" alt="Power supply"></p>
+
 ATmega328P (16 MHz) · MPU-6050 (GY-521) · 2 × TMC2226 · 2 × NEMA 17 (1.8°, 1.7 A) · MP1584 buck converter 9 V → 5 V · 9 V battery · point-to-point wiring on a perfboard.
 The full bill of materials is in the documentation.
 
 ## Repository contents
-- `firmware/` – Arduino (AVR) source code: `balanser.ino` (main version) and `balanser_obrot.ino` (experimental variant with automatic turning)
+- `firmware/balanser/` – main firmware (Arduino / AVR)
+- `firmware/balanser_obrot/` – experimental variant with automatic turning every ~13 s
 - `docs/` – full technical documentation (in Polish, 40 pages): theory, schematics, BOM, firmware listing, tuning procedure, tests
 - `images/` – photos and diagrams
 
 ## Build & run
-1. Open `firmware/balanser.ino` in Arduino IDE, board: **Arduino Uno** (ATmega328P, 16 MHz).
+1. Open `firmware/balanser/balanser.ino` in Arduino IDE, board: **Arduino Uno** (ATmega328P, 16 MHz).
 2. Upload through a USB-UART converter (CP2102).
 3. Hold the robot upright and still for ~2 s while the gyroscope calibrates.
 
